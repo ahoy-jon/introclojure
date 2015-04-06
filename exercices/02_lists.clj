@@ -1,63 +1,63 @@
 //2_lits
 
 (exercice
-  "Lists can be expressed by function or a quoted form"
+  "Les listes peuvent être exprimées par fonction ou une forme cité"
   [(= '(__ __ __ __ __) (list 1 2 3 4 5))]1 2 3 4 5)
 
 (exercice
 
-  "They are Clojure seqs (sequences), so they allow access to the first"
+  "On peut accèder au premier élément..."
   [(= __ (first '(1 2 3 4 5)))]1)
 
 
 (exercice
-  "As well as the rest"
+  "Ainsi que le reste"
   [(= __ (rest '(1 2 3 4 5)))][2 3 4 5])
 
 
 (exercice
-  "Count your blessings"
+  "Comptez vos bénédictions"
   [(= __ (count '(dracula dooku chocula)))]3)
 
 
 (exercice
-  "Before they are gone"
+  "Avant qu'ils ne disparaissent"
   [(= __ (count '()))]0)
 
 
 (exercice
 
-  "The rest, when nothing is left, is empty"
+  "Le reste, quand rien n'est laissé, est vide"
   [(= __ (rest '(100)))]())
 
 
 (exercice
 
-  "Construction by adding an element to the front is easy"
+  "Construction en ajoutant un élément à l'avant est facile"
   [(= __ (cons :a '(:b :c :d :e)))][:a :b :c :d :e])
 
 
 (exercice
 
-  "Conjoining an element to a list isn't hard either"
+  "Conjoindre un élément à une liste ne est pas difficile non plus"
   [(= __ (conj '(:a :b :c :d) :e))] [:e :a :b :c :d])
 
 
 (exercice
 
-  "You can use a list like a stack to get the first element"
+  "Vous pouvez utiliser une liste comme une pile pour obtenir le premier élément"
   [(= __ (peek '(:a :b :c :d :e)))]:a)
 
 
 (exercice
 
-  "Or the others"
+  "Ou les autres"
   [(= __ (pop '(:a :b :c :d :e)))][:b :c :d :e])
 
 
 (exercice
 
-  "But watch out if you try to pop nothing"
+  "Mais attention si vous essayez de rien pop"
   [(= __ (try
            (pop '())
            (catch IllegalStateException e
@@ -66,7 +66,7 @@
 
 (exercice
 
-  "The rest of nothing isn't so strict"
+  "Le reste de rien n'est pas si stricte"
   (= __ (try
           (rest '())
           (catch IllegalStateException e

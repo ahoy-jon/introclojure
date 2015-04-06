@@ -1,23 +1,23 @@
 (exercice
-  "You can create a set by converting another collection"
+  "Vous pouvez créer un ensemble en convertissant une autre collection"
   [(= #{3} (set __))][3])
 
   (exercice
-  "Counting them is like counting other collections"
+  "Compter, c'est comme compter les autres collections"
   [(= __ (count #{1 2 3}))]3)
 
     (exercice
-  "Remember that a set is a *mathematical* set"
+  "Rappelez-vous qu'un set est un set * mathématique *"
   [(= __ (set '(1 1 2 2 3 3 4 4 5 5)))]#{1 2 3 4 5})
 
       (exercice
-  "You can ask clojure for the union of two sets"
+  "Vous pouvez demander à clojure l'union de deux ensembles"
   [(= __ (clojure.set/union #{1 2 3 4} #{2 3 5}))] #{1 2 3 4 5})
 
         (exercice
-  "And also the intersection"
+  "Et aussi l'intersection"
   [(= __ (clojure.set/intersection #{1 2 3 4} #{2 3 5}))] #{2 3})
 
           (exercice
-  "But don't forget about the difference"
+  "Mais ne oubliez pas la différence"
   [(= __ (clojure.set/difference #{1 2 3 4 5} #{2 3 5}))]#{1 4})

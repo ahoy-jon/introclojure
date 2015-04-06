@@ -2,19 +2,19 @@
 (def bizarro-world (ref {}))
 
 (exercice
-  "In the beginning, there was a word"
+  "Au début, il y avait un mot"
   [(= __ (deref the-world))] "hello")
 
 
 (exercice
 
-  "You can get the word more succinctly, but it's the same"
+  "Vous pouvez obtenir le mot le plus succinctement, mais c'est la même"
   [(= __ @the-world)] "hello")
 
 
 (exercice
 
-  "You can be the change you wish to see in the world."
+  "Vous pouvez être le changement que vous voulez voir dans le monde."
   [(= __ (do
            (dosync (ref-set the-world "better"))
            @the-world))] "better")
@@ -32,21 +32,21 @@
 
 (exercice
 
-  "Don't forget to do your work in a transaction!"
+  "N'oubliez pas de faire votre travail dans une transaction!"
   [(= 0 (do __
           @the-world))] (dosync (ref-set the-world 0)))
 
 
 (exercice
 
-  "Functions passed to alter may depend on the data in the ref"
+  "Les fonctions transférées à modifier peuvent dépendre les données dans le ref"
   [(= 20 (do
            (dosync (alter the-world ___))))] (map :jerry [@the-world @bizarro-world]))
 
 
 (exercice
 
-  "Two worlds are better than one"
+  "Deux mondes valent mieux qu'une"
   [(= ["Real Jerry" "Bizarro Jerry"]
      (do
        (dosync

@@ -1,43 +1,43 @@
 (exercice
-  "There are many ways to generate a sequence"
+  "Il ya plusieurs façons de générer une séquence"
   [(= __ (range 1 5))] [1 2 3 4])
 
 
 (exercice
 
-  "The range starts at the beginning by default"
+  "La gamme commence au début par défaut"
   [(= __ (range 5))] [0 1 2 3 4])
 
 
 (exercice
 
-  "Only take what you need when the sequence is large"
+  "Prenez uniquement ce que vous avez besoin quand la séquence est importante"
   [(= [0 1 2 3 4 5 6 7 8 9]
      (take __ (range 100)))] 10)
 
 
 (exercice
 
-  "Or limit results by dropping what you don't need"
+  "Ou limiter les résultats en laissant tomber ce que vous ne avez pas besoin"
   [(= [95 96 97 98 99]
      (drop __ (range 100)))] 95)
 
 
 (exercice
 
-  "Iteration provides an infinite lazy sequence"
+  "L'itération fournit une séquence paresseux infinie"
   [(= __ (take 20 (iterate inc 0)))] (range 20))
 
 
 (exercice
 
-  "Repetition is key"
+  "Répétition est la clé"
   [(= [:a :a :a :a :a :a :a :a :a :a]
      (repeat 10 __))] :a)
 
 
 (exercice
 
-  "Iteration can be used for repetition"
+  "L'itération peut être utilisé pour la répétition"
   [(= (repeat 100 :foo)
      (take 100 (iterate ___ :foo)))] (fn [x] x))

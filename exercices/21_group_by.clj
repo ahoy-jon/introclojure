@@ -4,14 +4,14 @@
 
 (exercice
 
-  "To categorize a collection by some function, use group-by."
+  "Pour classer une collection par une fonction, utilisez group-by."
   [(= __ (group-by count ["hello" "world" "foo" "bar"]))] odd?)
 
 
 
 (exercice
 
-  "You can simulate filter + remove in one pass"
+  "Vous pouvez simuler filtre + retirer en une seule passe"
   [(= (get-odds-and-evens [1 2 3 4 5])
      ((juxt filter remove) odd? [1 2 3 4 5])
      [[1 3 5] [2 4]])] {5 ["hello" "world"] 3 ["foo" "bar"]})
@@ -19,7 +19,7 @@
 
 (exercice
 
-  "You can also group by a primary key"
+  "Vous pouvez également regrouper par une clé primaire"
   [(= __
      (group-by :id [{:id 1 :name "Bob"}
                     {:id 2 :name "Mike"}
@@ -30,7 +30,7 @@
 
 (exercice
 
-  "But be careful when you group by non-required key"
+  "Mais soyez prudent lorsque vous groupe par clé non requise"
   [(= {"Bob" [{:name "Bob" :id 1}]
        "Mike" [{:name "Mike" :id 2}]
        __ [{:last-name "Smith" :id 1}]}
@@ -40,8 +40,7 @@
 
 
 (exercice
-
-  "The true power of group-by comes with custom functions"
+"Le vrai pouvoir de group-by est délivré via des fonctions personnalisées"
   [(= __
      (group-by #(if (:bad %) :naughty-list :nice-list)
        [{:name "Jimmy" :bad true}

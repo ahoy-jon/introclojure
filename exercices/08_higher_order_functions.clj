@@ -1,59 +1,59 @@
 (exercice
-  "The map function relates a sequence to another"
+  "La fonction map transforme une séquence en une autre"
   [(= [__ __ __] (map (fn [x] (* 4 x)) [1 2 3]))] 4 8 12)
 
 
 (exercice
-  "You may create that mapping"
+  "Vous pouvez créer votre mapping"
   [(= [1 4 9 16 25] (map (fn [x] __) [1 2 3 4 5]))] (* x x))
 
 
 (exercice
 
-  "Or use the names of existing functions"
+  "Ou utiliser les noms de fonctions existantes"
   [(= __ (map nil? [:a :b nil :c :d]))] [false false true false false])
 
 
 (exercice
 
-  "A filter can be strong"
+  "Un filtre peut être forte"
   [(= __ (filter (fn [x] false) '(:anything :goes :here)))] ())
 
 
 (exercice
 
-  "Or very weak"
+  "Ou très faible"
   [(= __ (filter (fn [x] true) '(:anything :goes :here)))] [:anything :goes :here])
 
 
 (exercice
 
-  "Or somewhere in between"
+  "Ou quelque part entre les deux"
   [(= [10 20 30] (filter (fn [x] __) [10 20 30 40 50 60 70 80]))] (< x 31))
 
 
 
 (exercice
 
-  "Maps and filters may be combined"
+  "Maps et filters peuvent être combinées"
   [(= [10 20 30] (map (fn [x] __) (filter (fn [x] __) [1 2 3 4 5 6 7 8])))] (* 10 x) (< x 4))
 
 
 (exercice
 
-  "Reducing can increase the result"
+  "Réduire peut augmenter le résultat"
   [(= __ (reduce (fn [a b] (* a b)) [1 2 3 4]))] 24)
 
 
 (exercice
 
-  "You can start somewhere else"
+  "Vous pouvez commencer quelque part ailleurs"
   [(= 2400 (reduce (fn [a b] (* a b)) __ [1 2 3 4]))] 100)
 
 
 (exercice
 
-  "Numbers are not the only things one can reduce"
+  "Les chiffres ne sont pas les seules choses que l'on peut réduire"
   [(= "longest" (reduce (fn [a b]
                           (if (< __ __) b a))
                   ["which" "word" "is" "longest"])) (* 10 x) (< x 4)] (count a) (count b))

@@ -1,12 +1,12 @@
 (exercice
-  "Sequence comprehensions can bind each element in turn to a symbol"
+  "Compréhensions de séquences peuvent lier chaque élément à son tour à un symbole"
   [(= __
      (for [x (range 6)]
        x))] [0 1 2 3 4 5])
 
 (exercice
 
-  "They can easily emulate mapping"
+  "Ils peuvent facilement émuler l'utilisation d'un map"
   [(= '(0 1 4 9 16 25)
      (map (fn [x] (* x x))
        (range 6))
@@ -15,7 +15,7 @@
 
 (exercice
 
-  "And also filtering"
+  "Et aussi l'utilisation d'un filte"
   [(= '(1 3 5 7 9)
      (filter odd? (range 10))
      (for [x __ :when (odd? x)]
@@ -23,7 +23,7 @@
 
 (exercice
 
-  "Combinations of these transformations is trivial"
+  "Les combinaisons de ces transformations est trivial"
   [(= '(1 9 25 49 81)
      (map (fn [x] (* x x))
        (filter odd? (range 10)))
@@ -32,7 +32,7 @@
 
 (exercice
 
-  "More complex transformations simply take multiple binding forms"
+  "Les transformations plus complexes prennent simplement des formes multiples de liaison"
   [(= [[:top :left] [:top :middle] [:top :right]
        [:middle :left] [:middle :middle] [:middle :right]
        [:bottom :left] [:bottom :middle] [:bottom :right]]

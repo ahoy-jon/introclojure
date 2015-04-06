@@ -1,44 +1,44 @@
 
 (exercice
-  "We shall contemplate truth by testing reality, via equality"
+  "Nous contemplerons la vérité en testant la réalité, par l'intermédiaire de l'égalité"
   [(= __ true)] true)
 
 (exercice
-  "To understand reality, we must compare our expectations against reality"
+  "Pour comprendre la réalité, nous devons comparer nos attentes contre la réalité"
   [(= __ (+ 1 1))] 2)
 
 (exercice
-  "You can test equality of many things"
+  "Vous pouvez tester l'égalité de beaucoup de choses"
   [(= (+ 3 4) 7 (+ 2 __))] 5)
 
 (exercice
-  "Some things may appear different, but be the same"
-  [(= __ (= 2 2/1))] tru)
+  "Certaines choses peuvent être différentes, mais être les mêmes"
+  [(= __ (= 2 2/1))] true)
 
 (exercice
-  "You cannot generally float to heavens of integers"
+  "Vous pouvez généralement pas flotter vers les cieux d'entiers"
   [(= __ (= 2 2.0))] false)
 
 (exercice
-  "But a looser equality is also possible"
+  "Mais une égalité plus lâche est également possible"
   [(= __ (== 2.0 2))] true)
 
 (exercice
-  "Something is not equal to nothing"
+  "Quelque chose n'est pas égal à rien"
   [(= __ (not (= 1 nil)))] true)
 
 (exercice
-  "Strings, and keywords, and symbols: oh my!"
+  "Chaine de caractère,  mot-clé, et des symbols: OH MON DIEU!"
   [(= __ (= "foo" :foo 'foo))] false)
 
 (exercice
-  "Make a keyword with your keyboard"
+  "Faire un mot-clé avec votre clavier"
   [(= :foo (keyword __))] "foo")
 
 (exercice
-  "Symbolism is all around us"
+  "Le symbolisme est tout autour de nous"
   [(= 'foo (symbol __))] "foo")
 
 (exercice
-  "When things cannot be equal, they must be different"
+  "Quand les choses ne peuvent pas être égaux, ils doivent être différents"
   [(not= :fill-in-the-blank __)] 3)
