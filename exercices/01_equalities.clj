@@ -16,11 +16,11 @@
   [(= __ (= 2 2/1))] true)
 
 (exercice
-  "Vous pouvez généralement pas flotter vers les cieux d'entiers"
+  "Vous pouvez généralement pas "flotter" vers les cieux d'entiers"
   [(= __ (= 2 2.0))] false)
 
 (exercice
-  "Mais une égalité plus lâche est également possible"
+  "Mais une égalité moins parfaite est également possible"
   [(= __ (== 2.0 2))] true)
 
 (exercice
@@ -32,7 +32,7 @@
   [(= __ (= "foo" :foo 'foo))] false)
 
 (exercice
-  "Faire un mot-clé avec votre clavier"
+  "Faire un mot-clé avec ou sans mot-clé"
   [(= :foo (keyword __))] "foo")
 
 (exercice
